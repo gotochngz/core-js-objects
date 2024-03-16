@@ -33,20 +33,19 @@ function shallowCopy(obj) {
  *    mergeObjects([{a: 1, b: 2}, {b: 3, c: 5}]) => {a: 1, b: 5, c: 5}
  *    mergeObjects([]) => {}
  */
-function mergeObjects(/* objects */) {
-  throw new Error('Not implemented');
-  // const result = {};
+function mergeObjects(objects) {
+  const result = {};
 
-  // objects.forEach((item) => {
-  //   for (const [key, value] of Object.entries(item)) {
-  //     if (result[key]) {
-  //       result[key] += value;
-  //     } else {
-  //       result[key] = value;
-  //     }
-  //   }
-  // });
-  // return result;
+  objects.forEach((item) => {
+    Object.entries(item).forEach(([key, value]) => {
+      if (result[key]) {
+        result[key] += value;
+      } else {
+        result[key] = value;
+      }
+    });
+  });
+  return result;
 }
 
 /**
@@ -64,17 +63,17 @@ function mergeObjects(/* objects */) {
  */
 function removeProperties(/* obj, keys */) {
   throw new Error('Not implemented');
-  // keys.map((item) => {
-  //   for (const key in newObj) {
+  // const newObj = obj;
+  // keys.forEach((item) => {
+  //   return Object.entries(newObj).forEach((key) => {
   //     if (key === item) {
   //       delete newObj[key];
   //     }
   //     return item;
-  //   }
+  //   });
   // });
   // return newObj;
 }
-
 /**
  * Compares two source objects. Returns true if the objects are equal and false otherwise.
  * There are no nested objects.
