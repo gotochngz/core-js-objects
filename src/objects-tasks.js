@@ -17,8 +17,9 @@
  *    shallowCopy({a: 2, b: { a: [1, 2, 3]}}) => {a: 2, b: { a: [1, 2, 3]}}
  *    shallowCopy({}) => {}
  */
-function shallowCopy(/* obj */) {
-  throw new Error('Not implemented');
+function shallowCopy(obj) {
+  const newObj = {};
+  return Object.assign(newObj, obj);
 }
 
 /**
@@ -34,6 +35,18 @@ function shallowCopy(/* obj */) {
  */
 function mergeObjects(/* objects */) {
   throw new Error('Not implemented');
+  // const result = {};
+
+  // objects.forEach((item) => {
+  //   for (const [key, value] of Object.entries(item)) {
+  //     if (result[key]) {
+  //       result[key] += value;
+  //     } else {
+  //       result[key] = value;
+  //     }
+  //   }
+  // });
+  // return result;
 }
 
 /**
@@ -51,6 +64,15 @@ function mergeObjects(/* objects */) {
  */
 function removeProperties(/* obj, keys */) {
   throw new Error('Not implemented');
+  // keys.map((item) => {
+  //   for (const key in newObj) {
+  //     if (key === item) {
+  //       delete newObj[key];
+  //     }
+  //     return item;
+  //   }
+  // });
+  // return newObj;
 }
 
 /**
@@ -100,8 +122,8 @@ function isEmptyObject(/* obj */) {
  *    immutableObj.newProp = 'new';
  *    console.log(immutableObj) => {a: 1, b: 2}
  */
-function makeImmutable(/* obj */) {
-  throw new Error('Not implemented');
+function makeImmutable(obj) {
+  return Object.freeze(obj);
 }
 
 /**
