@@ -69,7 +69,6 @@ function removeProperties(/* obj, keys */) {
   //     if (key === item) {
   //       delete newObj[key];
   //     }
-  //     return item;
   //   });
   // });
   // return newObj;
@@ -88,6 +87,22 @@ function removeProperties(/* obj, keys */) {
  */
 function compareObjects(/* obj1, obj2 */) {
   throw new Error('Not implemented');
+  // const arr2 = Object.entries(obj2);
+  // const arr1 = Object.entries(obj1);
+  // let length = 1;
+  // let result = false;
+  // if (arr1.length !== arr2.length) {
+  //   return result;
+  // }
+  // for (let i = 0; i < arr1.length; i += 1) {
+  //   if (arr1[i][i] === arr2[i][i]) {
+  //     length += 1;
+  //   }
+  //   length += 0;
+  // }
+
+  // result = length === arr1.length;
+  // return result;
 }
 
 /**
@@ -101,8 +116,9 @@ function compareObjects(/* obj1, obj2 */) {
  *    isEmptyObject({}) => true
  *    isEmptyObject({a: 1}) => false
  */
-function isEmptyObject(/* obj */) {
-  throw new Error('Not implemented');
+function isEmptyObject(obj) {
+  // throw new Error('Not implemented');
+  return Object.keys(obj).length === 0;
 }
 
 /**
@@ -172,6 +188,11 @@ function sellTickets(/* queue */) {
  */
 function Rectangle(/* width, height */) {
   throw new Error('Not implemented');
+  // this.width = width;
+  // this.height = height;
+  // Rectangle.prototype.bind = function getArea() {
+  //   return this.width * this.height;
+  // };
 }
 
 /**
@@ -184,8 +205,9 @@ function Rectangle(/* width, height */) {
  *    [1,2,3]   =>  '[1,2,3]'
  *    { width: 10, height : 20 } => '{"height":10,"width":20}'
  */
-function getJSON(/* obj */) {
-  throw new Error('Not implemented');
+function getJSON(obj) {
+  // throw new Error('Not implemented');
+  return JSON.stringify(obj);
 }
 
 /**
